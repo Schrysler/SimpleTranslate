@@ -71,7 +71,8 @@ public class TranslateTask implements Runnable{
 			reader.close();
 			
 			JSONObject jsonObject = new JSONObject(payload);
-			result = jsonObject.getJSONObject("responseData")
+			result = "lang= ";
+			result += jsonObject.getJSONObject("responseData")
 			.getString("detectedSourceLanguage")
 			.replace("&#39;", "'")
 			.replace("&amp;", "&");
